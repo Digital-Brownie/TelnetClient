@@ -1,0 +1,16 @@
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+.vs/
+bin/
+obj/
+docs/html/
+.idea
+*.iml
+**/out
+*.log
+
+.sonarlint
+
