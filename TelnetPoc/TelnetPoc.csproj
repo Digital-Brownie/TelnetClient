@@ -7,4 +7,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AExTelnetClient" Version="0.0.2.1" />
+    </ItemGroup>
+
 </Project>

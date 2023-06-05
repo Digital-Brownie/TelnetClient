@@ -8,7 +8,7 @@ public class TelnetRepository : IDisposable
     private readonly int _port;
     private readonly TcpClient _tcpClient;
     private NetworkStream _stream;
-    
+
     private readonly Func<byte[], int, int, string> _getString;
     private readonly Func<string, byte[]> _getBytes;
 
@@ -48,16 +48,16 @@ public class TelnetRepository : IDisposable
     {
         await Task.Delay(1000);
         // Console.WriteLine($"Bytes available {_tcpClient.Available}");
-        
+
         var outputBytes = new byte[_tcpClient.Available];
         var readBytes = await _stream.ReadAsync(outputBytes);
-        
+
         // Console.WriteLine($"readBytes: {readBytes}");
         return _getString(outputBytes, 0, readBytes);
     }
 
     public int ReadByte() => _stream.ReadByte();
-    
+
     public void WriteByte(byte @byte) => _stream.WriteByte(@byte);
 
     public Task Write(string command)
